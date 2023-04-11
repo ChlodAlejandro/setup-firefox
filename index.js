@@ -6588,11 +6588,12 @@ class LatestDownloadURL {
         }
         else if (os === platform_1.OS.LINUX && arch === platform_1.Arch.AMD64) {
             return "linux64";
-            // TODO Unable to launch silent install on latest version for windows
-            // } else if (os === OS.WINDOWS && arch === Arch.I686) {
-            //   return "win";
-            // } else if (os === OS.WINDOWS && arch === Arch.AMD64) {
-            //   return "win64";
+        }
+        else if (os === platform_1.OS.WINDOWS && arch === platform_1.Arch.I686) {
+            return "win";
+        }
+        else if (os === platform_1.OS.WINDOWS && arch === platform_1.Arch.AMD64) {
+            return "win64";
         }
         throw new errors_1.UnsupportedPlatformError({ os, arch }, this.version);
     }
